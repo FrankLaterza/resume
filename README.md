@@ -2,13 +2,11 @@
 
 [**View PDF**](FrankLaterzaFall2025.pdf)
 
-![Resume Preview](resume_preview.png)
-
 This repository contains the LaTeX source for my resume.
 
 ## Building the PDF
 
-The easiest way to build the PDF and generate the preview image is to use the provided scripts.
+The easiest way to build the PDF is to use the provided scripts.
 
 ### Using the Build Scripts
 
@@ -22,7 +20,6 @@ The easiest way to build the PDF and generate the preview image is to use the pr
         ```bat
         .\build.bat
         ```
-        **Note for Windows users:** The Windows script requires [ImageMagick](https://imagemagick.org/) to be installed and available in your system's PATH to generate the PNG preview.
 
 ### Other Build Methods
 

@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# But keep these files
+!*.tex
+!*.pdf
+!*.png
+!.gitignore
+!README.md
+!build.sh
+!build.bat

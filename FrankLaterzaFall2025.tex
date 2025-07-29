@@ -1,4 +1,4 @@
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,10pt]{extarticle}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -53,13 +53,19 @@
     \end{tabular*}\vspace{-2pt}
 }
 
+\newcommand{\resumeProjectSubheading}[2]{
+  \item\vspace{1pt}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-2pt}
+}
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\fontsize{3}{3}\selectfont$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in,label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[font=\footnotesize, itemsep=2pt, topsep=2pt]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, font=\footnotesize, itemsep=2pt, topsep=2pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
 
 %-------------------------------------------
@@ -71,12 +77,11 @@
 %----------HEADING-----------------
 \begin{center}
     \textbf{\Huge \scshape Frank Laterza} \\
-    \small 941-223-5298 $|$ \href{mailto:franklaterza@gmail.com}{\underline{franklaterza@gmail.com}} $|$ 
-    \href{https://franklaterza.com}{\underline{franklaterza.com}} $|$ 
-    \href{https://github.com/franklaterza}{\underline{github.com/franklaterza}} $|$ 
-    \href{https://linkedin.com/in/laterzafrank/}{\underline{linkedin.com/in/laterzafrank}} \\
-    \vspace{-2pt}
-    Embedded Software Engineer $\cdot$ UCF Computer Engineering Student
+    \small 941-223-5298 $|$ \href{mailto:franklaterza@gmail.com}{franklaterza@gmail.com} $|$
+    \href{https://franklaterza.com}{franklaterza.com} $|$
+    \href{https://github.com/franklaterza}{github.com/franklaterza} $|$
+    \href{https://linkedin.com/in/laterzafrank/}{linkedin.com/in/laterzafrank} \\
+    Software Engineer $\cdot$ UCF Computer Engineering Student
 \end{center}
 
 
@@ -91,12 +96,12 @@
 
 %-----------TECHNICAL SKILLS-----------------
 \section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: C/C++, Rust, Python, Java, TypeScript, Next.js, VHDL, Verilog, GNU/Linux, Git, OOP, Data Structures} \\
-     \textbf{Hardware/Tools}{: Embedded Systems, FPGA, Eagle CAD, SolidWorks, Fusion 360, Lathe, CNC, Soldering, SMT/THT} \\
-    }}
- \end{itemize}
+  \resumeSubHeadingListStart
+    \item \small{
+      \textbf{Languages}{: C/C++, Python, Java, TypeScript, Objective-C, Swift, Verilog, VHDL} \\
+      \textbf{Hardware/Embedded}{: FPGA, PCB Design (Eagle CAD), Real-Time Systems (FreeRTOS), I2C, SPI, UART} \\
+    }
+  \resumeSubHeadingListEnd
 
 
 %-----------EXPERIENCE-----------------
@@ -104,66 +109,50 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
+      {Eta Space}{Rockledge, FL}
+      {Software Engineer Lead}{June 2023 -- Current}
+      \resumeItemListStart
+        \item{Led software development for a NASA-funded satellite mission, architecting a fault-tolerant, multithreaded flight software system in C++ to demonstrate lossless cryogenic liquid transfer.}
+        \item{Engineered a robust embedded stack to control and monitor a network of sensors, heaters, valves, and pressure transducers, ensuring mission-critical system reliability.}
+        \item{Designed a custom PCB and firmware with in-flight reprogramming capabilities, enabling remote system updates.}
+        \item{Implemented an encrypted telemetry system integrated with Rocket Lab spacecraft, securing critical data transmission.}
+        \item{Developed C++ GUI for ground-side testing, improving engineering interface efficiency with flight computer.}
+      \resumeItemListEnd
+
+    \resumeSubheading
       {Apple}{Cupertino, CA}
       {Software Engineer Intern}{May 2025 -- Aug. 2025}
       \resumeItemListStart
-        \item{Prototyped first party feature for the Apple HomePod integrated into app}
-        \item{Modified Percies Time Protocol algorythm for timing syncronisation across home devices creating lightweight}
-        \item{Archited software designed for distruputed systems in a home environment}
+        \item{Prototyped first party feature for the Apple HomePod, utilizing Objective-C/Swift to seamlessly integrate with the Home ecosystem to enhance multi-device interaction.}
+        \item{Optimized a lightweight Precision Time Protocol (PTP) algorithm for multi-room synchronization, reducing network overhead and improving timing accuracy across home devices.}
+        \item{Architected a fault-tolerant distributed system framework for the HomePod, ensuring high availability and consistent state management for critical home automation tasks.}
       \resumeItemListEnd
 
     \resumeSubheading
       {NVIDIA}{Santa Clara, CA}
       {GPU Firmware Engineer Intern}{May 2024 -- Aug. 2024}
       \resumeItemListStart
-        \item{Refactored security key signing software for dynamic metadata parsing allowing clients to securely update firmware images}
-        \item{Contributed to GPU BIOS build system for stack analysis resulting in prevention of unknown stack overflow errors.}
-        \item{Released client facing tools exposing I2C event logs and faults to diagnose crashes for enterprise datacenter GPUs.}
+        \item{Refactored security key-signing software to dynamically parse metadata, enabling secure client-side firmware updates for enterprise GPUs.}
+        \item{Integrated static stack analysis into the GPU BIOS build system, proactively preventing critical stack overflow errors before deployment.}
+        \item{Developed and released a client-facing diagnostic tool to expose I2C event logs, accelerating crash analysis for enterprise datacenter GPUs.}
       \resumeItemListEnd
-
-    \resumeSubheading
-      {Eta Space}{Rockledge, FL}
-      {Software Engineer Lead}{June 2023 -- Current}
-      \resumeItemListStart
-        \item{Lead software development for NASA funded satellite mission designed to demonstrate lossless cryogenic liquid transfer.}
-        \item{Leveraged multithreading to design software for flight computer to record scientific measurements and control external hardware.}
-        \item{Archited software design for Orbital mission execution for redundant, fault tollerent system}
-        \item{Designed PCB and Software allowing reprogram during flight }
-        \item{Implemented fully encrypted packet telemetry system for critical mission data integrated with Rocket Lab Space Craft}
-        \item{Designed UI for testing and lab use to help engineers interface with flight computer}
-        \item{Developed software for embedded system stack designed to control sensors, heaters, and valves, and pressure transducers.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {University of Central Florida's CREOL College of Optics and Photonics}{Orlando, FL}
-      {Undergraduate Research Assistant}{Jan. 2023 -- May 2023}
-      \resumeItemListStart
-        \item{Developed VHDL software for measurement of arrival of photons utilizing FPGA.}
-        \item{Verified accuracy through simulation using ModelSim, resulting in 4 times the performance using timing techniques.}
-      \resumeItemListEnd
-
   \resumeSubHeadingListEnd
-
 
 %-----------PROJECTS-----------------
 \section{Projects}
     \resumeSubHeadingListStart
-      \resumeSubheading
+      \resumeProjectSubheading
         {S.P.U.D (Custom RISC-V CPU) }{Aug. 2025}
-        { C, MultiSim, }{}
         \resumeItemListStart
-          \item{Customized 5 stage pipeline RISC-V 32bit CPU designed drive 64x64 RGB-LED display and run games written in C}
-          \item{Designed custom display driver logic using protected ram buffers allocated for colored pixel values for RGB-LED Matrix} 
-          \item{Developed the S.P.U.D SDK for interfacing with hardware and graphics engine. TODO FILL} 
+          \item{Designed and implemented a 5-stage pipelined 32-bit RISC-V CPU on an FPGA to drive a 64x64 RGB-LED matrix, including custom display driver logic with protected RAM buffers.}
+          \item{Developed a C-based SDK for the S.P.U.D. processor, providing a hardware abstraction layer (HAL) and a simple graphics engine for 2D game development.}
         \resumeItemListEnd
-      \resumeSubheading
+      \resumeProjectSubheading
         {Dex (Self-Balancing Robot)}{Dec. 2024}
-        {C/C++, Fusion 360, Eagle Cad}{}
         \resumeItemListStart
-          \item{Created an open-source self-balancing robot controlled over Bluetooth using Pico SDK, FreeRTOS Kernel, and BTstack.}
-          \item{Leveraged multicore real time embedded software using FreeRTOS to process controls, gather sensor data, and drive motors.}
-          \item{Implemented robust and responsive control system responsible for balancing through a real time feedback loop using gyroscope.}
-          \item{Designed moduler PCB for microcontroller, gryoscope/accelerometer sensors, motor drivers, debugging, and battery management }
+          \item{Developed multicore real-time embedded software using FreeRTOS and the Pico SDK to control a self-balancing robot via Bluetooth (BTstack).}
+          \item{Implemented a robust PID control system for real-time balancing, utilizing gyroscope/accelerometer data from an IMU.}
+          \item{Designed a modular PCB in integrating a microcontroller, IMU, motor drivers, and power management circuits.}
         \resumeItemListEnd
     \resumeSubHeadingListEnd
 
